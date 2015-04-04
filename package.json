@@ -1,0 +1,27 @@
+{
+  "name": "net-sales",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MitchK/net-sales.git"
+  },
+  "author": "Michael Kunzmann <michael.kunzmann@sap.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MitchK/net-sales/issues"
+  },
+  "homepage": "https://github.com/MitchK/net-sales",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "express": "^4.12.3",
+    "main-bower-files": "^2.6.2"
+  },
+  "devDependencies": {
+    "gulp-inject": "^1.2.0"
+  }
+}
