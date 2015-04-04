@@ -1,0 +1,21 @@
+
+
+ul.countries {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+}
+
+ul.countries li {
+	float: left;
+	height: 100px;
+	width: 100px;
+	margin-left: 18px;
+}
+
+button.country {
+	height: 100%;
+	width: 100%;
+}
+
