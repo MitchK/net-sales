@@ -74,30 +74,35 @@
 
 	<!-- Master -->
 	<div id="country-selection" class="container">
-		<div class="col-lg-12">
-			<ul class="countries">
-				<li ng-repeat="country in netSales"><button class="country" ng-click="selectCountryWithIndex($index)">{{ country.name }}</button></li>
-			</ul>
+		<div id="country-container" class="col-lg-12">
+			<a href="" ng-repeat="country in netSales" class="country {{ $index == selectedIndex ? 'country-active' : '' }}" ng-click="selectCountryWithIndex($index)">
+				{{ country.name }}
+				<h2>{{ country.country_data.net_sales }}</h2>
+			</a>
 		</div>
 	</div>
 
 	<!-- Detail -->
 	<div id="country-selection" class="container" ng-show="netSales.length > 0">
 		<div class="col-lg-6">
-			<h5>Net sales for {{ selectedCountry.name }}</h5>
+			<h3>Net sales for {{ selectedCountry.name }}</h3>
 			<nvd3-discrete-bar-chart
 				data="chartData"
 				id="exampleId"
-				xAxisTickFormat="xAxisTickFormatFunction()"
-				width="550"
 				height="350"
+				transitionDuration="500"
+				showValues="true"
 				showXAxis="true"
 				showYAxis="true">
 				<svg></svg>
 			</nvd3-multi-bar-chart>
 		</div>
 		<div class="col-lg-6">
-			<h5>Best seller products</h5>
+			<h3>Best seller products</h3>
+			<table class="table table-striped">
+				<tr><th>Product</th><th>Units</th><th>Total</th></tr>
+				<tr ng-repeat="product in selectedCountry.country_data.best_sellers"><td>{{ product.name }}</td><td>{{ product.units }}</td><td>{{ product.total }}</td></tr>
+			</table>
 		</div>
 	</div>
 

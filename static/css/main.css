@@ -1,21 +1,29 @@
 
 
-ul.countries {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	overflow: auto;
+#country-container {
+	text-align: center;
 }
 
-ul.countries li {
-	float: left;
-	height: 100px;
-	width: 100px;
-	margin-left: 18px;
+a.country {
+	height: 200px;
+	width: 200px;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	background-image: url(/static/img/country.svg);
+	padding-top: 70px;
+	color: black;
 }
 
-button.country {
-	height: 100%;
-	width: 100%;
+a.country h2 {
+	margin-top: 0;
 }
 
+a.country-active {
+	background-image: url(/static/img/country_activated.svg);
+}
+
+a.country:hover {
+	background-image: url(/static/img/country_activated.svg);
+}
