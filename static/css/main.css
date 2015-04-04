@@ -27,3 +27,11 @@ a.country-active {
 a.country:hover {
 	background-image: url(/static/img/country_activated.svg);
 }
+
+a.navbar-brand-logo {
+	padding: 10px;
+}
+
+a.navbar-brand-logo img {
+	height: 30px;
+}
