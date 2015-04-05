@@ -79,6 +79,11 @@ a.country:hover {
 	fill: #27B2F1 !important;
 }
 
+/* IE fix */
+#yearlDistributionChart svg {
+	height: 350px;
+}
+
 h3 {
 	margin-bottom: 20px;
 }
