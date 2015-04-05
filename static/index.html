@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="net-sales">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SAP - Net Sales</title>
+	<title>SAP - Net Sales</title>
 	
 	<!-- bower:css -->
 	<link rel="stylesheet" href="/static/bower_components/nvd3/src/nv.d3.css">
@@ -21,39 +21,39 @@
 	<nav class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
-			    <span class="glyphicon glyphicon-filter"></span>
-			  </button>
-			  <a class="navbar-brand navbar-brand-logo" href="#"><img src="/static/img/sap_logo.png"></a>
-			  <a class="navbar-brand" href="#">Net Sales</a>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
+					<span class="glyphicon glyphicon-filter"></span>
+				</button>
+				<a class="navbar-brand navbar-brand-logo" href="#"><img src="/static/img/sap_logo.png"></a>
+				<a class="navbar-brand" href="#">Net Sales</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-			  <ul class="nav navbar-nav navbar-right">
-			    <li class="dropdown">
-			      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">2014 <span class="caret"></span></a>
-			      <ul class="dropdown-menu" role="menu">
-			        <li><a href="#">2014</a></li>
-			        <li><a href="#">2013</a></li>
-			        <li><a href="#">2012</a></li>
-			      </ul>
-			    </li>
-			    <li class="dropdown">
-			      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Category 1 <span class="caret"></span></a>
-			      <ul class="dropdown-menu" role="menu">
-			        <li><a href="#">Category</a></li>
-			        <li><a href="#">Category</a></li>
-			        <li><a href="#">Category</a></li>
-			      </ul>
-			    </li>
-			    <li class="dropdown">
-			      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sub category 1 <span class="caret"></span></a>
-			      <ul class="dropdown-menu" role="menu">
-			        <li><a href="#">Sub category 1</a></li>
-			        <li><a href="#">Sub category 2</a></li>
-			        <li><a href="#">Sub category 3</a></li>
-			      </ul>
-			    </li>
-			  </ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">2014 <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">2014</a></li>
+							<li><a href="#">2013</a></li>
+							<li><a href="#">2012</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Category 1 <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Category</a></li>
+							<li><a href="#">Category</a></li>
+							<li><a href="#">Category</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sub category 1 <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Sub category 1</a></li>
+							<li><a href="#">Sub category 2</a></li>
+							<li><a href="#">Sub category 3</a></li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</nav>
@@ -63,20 +63,20 @@
 		<div id="master" class="container ng-cloak">
 			<div class="row-fluid visible-xs">
 				<div id="country-carousel" class="carousel slide col-md-12">
-				  <!-- Indicators -->
-				  <ol class="carousel-indicators">
-				    <li ng-repeat="country in netSales" data-target="#country-carousel" data-slide-to="{{ $index }}" class="{{ $index === selectedIndex ? 'active' : '' }}" ng-click="selectCountryWithIndex($index)"></li>
-				  </ol>
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li ng-repeat="country in netSales" data-target="#country-carousel" data-slide-to="{{ $index }}" class="{{ $index === selectedIndex ? 'active' : '' }}" ng-click="selectCountryWithIndex($index)"></li>
+					</ol>
 
-				  <!-- Wrapper for slides -->
-				  <div class="carousel-inner" role="listbox">
-				    <div ng-repeat="country in netSales" class="item {{ $index === selectedIndex ? 'active' : '' }}">
-				    	<a class="country country-active">
-							{{ country.name }}
-							<h2>{{ country.country_data.net_sales }}</h2>
-						</a>
-				    </div>
-				  </div>
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
+						<div ng-repeat="country in netSales" class="item {{ $index === selectedIndex ? 'active' : '' }}">
+							<a class="country country-active">
+								{{ country.name }}
+								<h2>{{ country.country_data.net_sales }}</h2>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="row hidden-xs">
@@ -97,57 +97,57 @@
 				<div class="col-md-6">
 					<h3>Net sales for {{ selectedCountry.name }}</h3>
 					<nvd3-discrete-bar-chart
-						data="chartData"
-						id="yearlDistributionChart"
-						height="350"
-						transitionDuration="500"
-						valueformat="valueFormat"
-						margin="{left:30,top:1,bottom:30,right:0}"
-						showValues="true"
-						showXAxis="true"
-						showYAxis="true">
-						<svg></svg>
-					</nvd3-multi-bar-chart>
+					data="chartData"
+					id="yearlDistributionChart"
+					height="350"
+					transitionDuration="500"
+					valueformat="valueFormat"
+					margin="{left:30,top:1,bottom:30,right:0}"
+					showValues="true"
+					showXAxis="true"
+					showYAxis="true">
+					<svg></svg>
+				</nvd3-multi-bar-chart>
+			</div>
+			<div class="col-md-6">
+				<div class="row hidden-xs">
+					<h3>Best seller products</h3>
+					<table class="table table-striped ">
+						<tr><th>Product</th><th>Units</th><th>Total</th></tr>
+						<tr ng-repeat="product in selectedCountry.country_data.best_sellers"><td>{{ product.name }}</td><td>{{ product.units }}</td><td>{{ product.total }}</td></tr>
+					</table>
 				</div>
-				<div class="col-md-6">
-					<div class="row hidden-xs">
-						<h3>Best seller products</h3>
-						<table class="table table-striped ">
-							<tr><th>Product</th><th>Units</th><th>Total</th></tr>
-							<tr ng-repeat="product in selectedCountry.country_data.best_sellers"><td>{{ product.name }}</td><td>{{ product.units }}</td><td>{{ product.total }}</td></tr>
-						</table>
-					</div>
-					<div class="row visible-xs">
+				<div class="row visible-xs">
 					<div class="panel panel-default">
-					  <!-- Default panel contents -->
-					  <div class="panel-heading"><h3>Best seller products</h3></div>
-					  <ul class="list-group">
-					    <li class="list-group-item product" ng-repeat="product in selectedCountry.country_data.best_sellers">
-		    				<span class="pull-right">{{ product.total }}</span>
-					   		<h4 class="list-group-item-heading">{{ product.name }}</h4>
-		    				<p class="list-group-item-text">
-		    					{{ product.units }} units
-		    				</p>
-					    </li>
-					  </ul>
-					</div>
+						<!-- Default panel contents -->
+						<div class="panel-heading"><h3>Best seller products</h3></div>
+						<ul class="list-group">
+							<li class="list-group-item product" ng-repeat="product in selectedCountry.country_data.best_sellers">
+								<span class="pull-right">{{ product.total }}</span>
+								<h4 class="list-group-item-heading">{{ product.name }}</h4>
+								<p class="list-group-item-text">
+									{{ product.units }} units
+								</p>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
-	<!-- bower:js -->
-	<script src="/static/bower_components/angular/angular.js"></script>
-	<script src="/static/bower_components/jquery/dist/jquery.js"></script>
-	<script src="/static/bower_components/d3/d3.js"></script>
-	<script src="/static/bower_components/nvd3/nv.d3.js"></script>
-	<script src="/static/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="/static/bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
-	<!-- endinject -->
-	<!-- inject:js -->
-	<script src="/static/lib/app.js"></script>
-	<script src="/static/lib/controllers/MainController.js"></script>
-	<!-- endinject -->
+<!-- bower:js -->
+<script src="/static/bower_components/angular/angular.js"></script>
+<script src="/static/bower_components/jquery/dist/jquery.js"></script>
+<script src="/static/bower_components/d3/d3.js"></script>
+<script src="/static/bower_components/nvd3/nv.d3.js"></script>
+<script src="/static/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/static/bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="/static/lib/app.js"></script>
+<script src="/static/lib/controllers/MainController.js"></script>
+<!-- endinject -->
 </body>
 </html>
