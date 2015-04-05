@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="/static/css/main.css">
 	<!-- endinject -->
 </head>
-<body ng-controller="MainController">
+<body ng-controller="MainController" ngCloak>
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-default">
@@ -65,7 +65,7 @@
 	</nav>
 
 	<!-- Master -->
-	<div id="country-selection" class="container">
+	<div id="master" class="container">
 		<div class="row visible-xs">
 			<div id="country-carousel" class="carousel slide col-lg-12">
 			  <!-- Indicators -->
@@ -95,7 +95,7 @@
 	</div>
 
 	<!-- Detail -->
-	<div id="country-selection" class="container" ng-show="netSales.length > 0">
+	<div id="detail" class="container" ng-show="netSales.length > 0">
 		<div class="col-lg-6">
 			<h3>Net sales for {{ selectedCountry.name }}</h3>
 			<nvd3-discrete-bar-chart
@@ -104,6 +104,7 @@
 				height="350"
 				transitionDuration="500"
 				valueformat="valueFormat"
+				margin="{left:30,top:1,bottom:30,right:0}"
 				showValues="true"
 				showXAxis="true"
 				showYAxis="true">
@@ -111,11 +112,28 @@
 			</nvd3-multi-bar-chart>
 		</div>
 		<div class="col-lg-6">
-			<h3>Best seller products</h3>
-			<table class="table table-striped">
-				<tr><th>Product</th><th>Units</th><th>Total</th></tr>
-				<tr ng-repeat="product in selectedCountry.country_data.best_sellers"><td>{{ product.name }}</td><td>{{ product.units }}</td><td>{{ product.total }}</td></tr>
-			</table>
+			<div class="row hidden-xs">
+				<h3>Best seller products</h3>
+				<table class="table table-striped ">
+					<tr><th>Product</th><th>Units</th><th>Total</th></tr>
+					<tr ng-repeat="product in selectedCountry.country_data.best_sellers"><td>{{ product.name }}</td><td>{{ product.units }}</td><td>{{ product.total }}</td></tr>
+				</table>
+			</div>
+			<div class="row visible-xs">
+			<div class="panel panel-default">
+			  <!-- Default panel contents -->
+			  <div class="panel-heading"><h3>Best seller products</h3></div>
+			  <ul class="list-group">
+			    <li class="list-group-item product" ng-repeat="product in selectedCountry.country_data.best_sellers">
+    				<span class="pull-right">{{ product.total }}</span>
+			   		<h4 class="list-group-item-heading">{{ product.name }}</h4>
+    				<p class="list-group-item-text">
+    					{{ product.units }} units
+    				</p>
+			    </li>
+			  </ul>
+			</div>
+			</div>
 		</div>
 	</div>
 

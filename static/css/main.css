@@ -60,3 +60,21 @@ a.navbar-brand-logo img {
 .carousel-inner div, #countries-large-screen {
 	text-align: center;
 }
+
+/* Optimizations for mobile */
+
+
+@media (max-width: 768px) {
+	#detail {
+		margin: 0;
+		padding:0;
+	}
+	
+	li.product .pull-right {
+		font-weight: bold;
+	}
+
+	h3 {
+		text-align: center;
+	}
+}

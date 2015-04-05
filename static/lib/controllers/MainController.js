@@ -35,7 +35,7 @@ app.controller('MainController', ['$scope', '$http' , function ($scope, $http) {
 	$scope.valueFormat = function (val) {
 		return val + 'M'
 	};
-	
+
 	$scope.selectCountryWithIndex = function (index) {
 		if ($scope.netSales.length === 0 || index >= $scope.netSales.length) 
 			return;
