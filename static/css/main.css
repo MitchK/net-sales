@@ -22,6 +22,11 @@
 	top: 0;
 }
 
+
+a.navbar-brand-logo {
+	width: 80px;
+}
+
 a.navbar-brand-logo {
 	padding: 10px;
 }
