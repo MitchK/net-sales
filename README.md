@@ -1,4 +1,5 @@
-# net-sales (https://net-sales.herokuapp.com/)
+# net-sales
+https://net-sales.herokuapp.com
 
 ## Run locally
 
