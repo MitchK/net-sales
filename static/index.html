@@ -66,11 +66,31 @@
 
 	<!-- Master -->
 	<div id="country-selection" class="container">
-		<div id="country-container" class="col-lg-12">
-			<a href="" ng-repeat="country in netSales" class="country {{ $index == selectedIndex ? 'country-active' : '' }}" ng-click="selectCountryWithIndex($index)">
-				{{ country.name }}
-				<h2>{{ country.country_data.net_sales }}</h2>
-			</a>
+		<div class="row visible-xs">
+			<div id="country-carousel" class="carousel slide col-lg-12">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li ng-repeat="country in netSales" data-target="#country-carousel" data-slide-to="{{ $index }}" class="{{ $index === selectedIndex ? 'active' : '' }}" ng-click="selectCountryWithIndex($index)"></li>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <div ng-repeat="country in netSales" class="item {{ $index === selectedIndex ? 'active' : '' }}">
+			    	<a class="country country-active">
+						{{ country.name }}
+						<h2>{{ country.country_data.net_sales }}</h2>
+					</a>
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<div class="row hidden-xs">
+			<div id="countries-large-screen" class="col-lg-12">
+				<a href="" ng-repeat="country in netSales" class="country {{ $index == selectedIndex ? 'country-active' : '' }}" ng-click="selectCountryWithIndex($index)">
+					{{ country.name }}
+					<h2>{{ country.country_data.net_sales }}</h2>
+				</a>
+			</div>
 		</div>
 	</div>
 
@@ -83,6 +103,7 @@
 				id="exampleId"
 				height="350"
 				transitionDuration="500"
+				valueformat="valueFormat"
 				showValues="true"
 				showXAxis="true"
 				showYAxis="true">

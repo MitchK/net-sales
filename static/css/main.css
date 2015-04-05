@@ -1,9 +1,5 @@
 
 
-#country-container {
-	text-align: center;
-}
-
 a.country {
 	height: 200px;
 	width: 200px;
@@ -14,6 +10,7 @@ a.country {
 	background-image: url(/static/img/country.svg);
 	padding-top: 70px;
 	color: black;
+	margin-bottom: 50px;
 }
 
 a.country h2 {
@@ -34,4 +31,32 @@ a.navbar-brand-logo {
 
 a.navbar-brand-logo img {
 	height: 30px;
+}
+
+.nv-bar {
+  fill: #17A2E1 !important;
+}
+
+.nv-bar:hover {
+  fill: #27B2F1 !important;
+}
+
+.carousel-indicators li {
+	border-color: gray;
+	margin-left: 8px;
+	margin-right: 8px;
+	height: 15px;
+	width: 15px;
+}
+
+.carousel-indicators li.active {
+	background-color: gray;
+	margin-left: 8px;
+	margin-right: 8px;
+	height: 15px;
+	width: 15px;
+}
+
+.carousel-inner div, #countries-large-screen {
+	text-align: center;
 }
