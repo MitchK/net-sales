@@ -1,4 +1,37 @@
 
+.ng-cloak {
+  display: none !important;
+}
+
+.row-dark {
+	background-color: #F1F1F1;
+}
+
+.row-light {
+	background-color: #FFFFFF;
+}
+
+
+/* Nav bar */
+
+.navbar {
+	margin: 0;
+}
+
+a.navbar-brand-logo {
+	padding: 10px;
+}
+
+a.navbar-brand-logo img {
+	height: 30px;
+}
+
+
+/* Countries  */
+
+#countries-large-screen {
+	text-align: center;
+}
 
 a.country {
 	height: 200px;
@@ -10,7 +43,6 @@ a.country {
 	background-image: url(/static/img/country.svg);
 	padding-top: 70px;
 	color: black;
-	margin-bottom: 50px;
 }
 
 a.country h2 {
@@ -25,51 +57,52 @@ a.country:hover {
 	background-image: url(/static/img/country_activated.svg);
 }
 
-a.navbar-brand-logo {
-	padding: 10px;
-}
-
-a.navbar-brand-logo img {
-	height: 30px;
-}
-
 .nv-bar {
-  fill: #17A2E1 !important;
+	fill: #17A2E1 !important;
 }
 
 .nv-bar:hover {
-  fill: #27B2F1 !important;
+	fill: #27B2F1 !important;
 }
 
-.carousel-indicators li {
-	border-color: gray;
-	margin-left: 8px;
-	margin-right: 8px;
-	height: 15px;
-	width: 15px;
+h3 {
+	margin-bottom: 20px;
 }
 
-.carousel-indicators li.active {
-	background-color: gray;
-	margin-left: 8px;
-	margin-right: 8px;
-	height: 15px;
-	width: 15px;
-}
-
-.carousel-inner div, #countries-large-screen {
-	text-align: center;
-}
 
 /* Optimizations for mobile */
-
-
 @media (max-width: 768px) {
-	#detail {
+	#master, #detail {
 		margin: 0;
-		padding:0;
 	}
-	
+
+	/* Carousel */
+	.carousel-indicators li {
+		border-color: gray;
+		margin-left: 8px;
+		margin-right: 8px;
+		height: 15px;
+		width: 15px;
+	}
+
+	.carousel-indicators li.active {
+		background-color: gray;
+		margin-left: 8px;
+		margin-right: 8px;
+		height: 15px;
+		width: 15px;
+	}
+
+	.carousel-inner div {
+		text-align: center;
+	}
+
+	a.country {
+		margin-bottom: 50px;
+	}
+
+	/* Best sellers */
+
 	li.product .pull-right {
 		font-weight: bold;
 	}

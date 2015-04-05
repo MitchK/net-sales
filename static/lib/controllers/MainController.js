@@ -5,8 +5,6 @@ app.controller('MainController', ['$scope', '$http' , function ($scope, $http) {
 	$scope.selectedIndex = -1;
 	$scope.selectedCountry = null;
 
-
-
 	// Non-scope functions
 
 	function showYearlyDistribution(distribution) {
@@ -28,7 +26,6 @@ app.controller('MainController', ['$scope', '$http' , function ($scope, $http) {
 				values: values
 			}
 		];
-		console.log(nv);
 	};
 
 	// Scope functions
@@ -51,7 +48,7 @@ app.controller('MainController', ['$scope', '$http' , function ($scope, $http) {
 		$http.get('/api/net-sales')
 			.success(function (data) {
 				$scope.netSales = data;
-				$scope.selectCountryWithIndex(1);
+				$scope.selectCountryWithIndex(0);
 				$scope.loading = false;
 			})
 			.error(function (err) {
