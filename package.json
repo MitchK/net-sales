@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "bower install"
+    "postinstall": "node_modules/.bin/bower install"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,8 @@
   "dependencies": {
     "gulp": "^3.8.11",
     "express": "^4.12.3",
-    "main-bower-files": "^2.6.2"
+    "main-bower-files": "^2.6.2",
+    "bower": "^1.4.1"
   },
   "devDependencies": {
     "gulp-inject": "^1.2.0"
