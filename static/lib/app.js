@@ -1,1 +1,1 @@
-var app = angular.module('net-sales', ['nvd3ChartDirectives']);
+var app = angular.module('net-sales', ['ngTouch', 'nvd3ChartDirectives']);

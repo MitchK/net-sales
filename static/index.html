@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="HandheldFriendly" content="true" />
 
 	<title>SAP - Net Sales</title>
 	
@@ -61,21 +62,19 @@
 	<!-- Master -->
 	<div class="row-dark">
 		<div id="master" class="container ng-cloak">
-			<div class="row-fluid visible-xs">
-				<div id="country-carousel" class="carousel slide col-md-12">
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-						<li ng-repeat="country in netSales" data-target="#country-carousel" data-slide-to="{{ $index }}" class="{{ $index === selectedIndex ? 'active' : '' }}" ng-click="selectCountryWithIndex($index)"></li>
-					</ol>
+			<div id="country-carousel" class="carousel slide visible-xs" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li ng-repeat="country in netSales" data-target="#country-carousel" data-slide-to="{{ $index }}" class="{{ $index === selectedIndex ? 'active' : '' }}"></li>
+				</ol>
 
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner" role="listbox">
-						<div ng-repeat="country in netSales" class="item {{ $index === selectedIndex ? 'active' : '' }}">
-							<a class="country country-active">
-								{{ country.name }}
-								<h2>{{ country.country_data.net_sales }}</h2>
-							</a>
-						</div>
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div ng-repeat="country in netSales" class="item {{ $index === selectedIndex ? 'active' : '' }}">
+						<a class="country country-active">
+							{{ country.name }}
+							<h2>{{ country.country_data.net_sales }}</h2>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -139,6 +138,7 @@
 
 <!-- bower:js -->
 <script src="/static/bower_components/angular/angular.js"></script>
+<script src="/static/bower_components/angular-touch/angular-touch.js"></script>
 <script src="/static/bower_components/jquery/dist/jquery.js"></script>
 <script src="/static/bower_components/d3/d3.js"></script>
 <script src="/static/bower_components/nvd3/nv.d3.js"></script>

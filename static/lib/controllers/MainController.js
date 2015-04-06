@@ -1,4 +1,4 @@
-app.controller('MainController', ['$scope', '$http' , function ($scope, $http) {
+app.controller('MainController', ['$scope', '$http', '$timeout', function ($scope, $http, $timeout) {
 
 	// Scope data
 	$scope.netSales = [];
@@ -34,7 +34,7 @@ app.controller('MainController', ['$scope', '$http' , function ($scope, $http) {
 	};
 
 	$scope.selectCountryWithIndex = function (index) {
-		if ($scope.netSales.length === 0 || index >= $scope.netSales.length) 
+		if ($scope.netSales.length < 0 || index >= $scope.netSales.length) 
 			return;
 
 		$scope.selectedIndex = index;
@@ -56,6 +56,28 @@ app.controller('MainController', ['$scope', '$http' , function ($scope, $http) {
 				$scope.loading = false;
 			});
 	};
+
+
+	// Carousel
+	$scope.swipeLeft = function () {
+    	$('#country-carousel').carousel('next');
+	};
+	$scope.swipeRight = function () {
+		$('#country-carousel').carousel('prev');
+	};
+	
+	$('#country-carousel').on('slide.bs.carousel', function (event) {
+
+	  var next = $(event.relatedTarget);
+	  var to = next.index();
+
+	  // Wait for the animation to be finished
+	  $timeout(function () {
+		  $scope.$apply(function () {
+		  	$scope.selectCountryWithIndex(to);
+		  });
+		}, 650);
+	});
 
 	// Initiate
 	$scope.loadData();
