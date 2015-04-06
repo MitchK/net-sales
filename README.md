@@ -8,6 +8,13 @@ https://net-sales.herokuapp.com
  * Bootstrap 3
  * NVD3 http://nvd3.org/
 
+## Tested browsers
+
+ * Google Chrome 41 / Chrome for Android 41
+ * Safari 8, Safari iOS 8.1
+ * Firefox 24
+ * Internet Explorer 11
+
 ## Run locally
 
 ```
