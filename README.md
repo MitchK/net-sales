@@ -4,7 +4,7 @@ https://net-sales.herokuapp.com
 ## Technologies used
 
  * Node.js web service
- * Angular 1.3
+ * Angular 1.3 / Angular Touch
  * Bootstrap 3
  * NVD3 http://nvd3.org/
 
