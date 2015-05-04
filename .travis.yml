@@ -1,9 +1,0 @@
-language: node_js
-deploy:
-  provider: heroku
-  api_key:
-    secure: JDiP7KdnJFy84KMTMAnfbplXuY5OAGoPOaDi6aIMWcY2oiJBGa9ZTMawDNwdrU7SpqFwpjFMMfC1RxOCnA0qGohVmFz0+4gOzc5XttQAgpm9zv0YkLKNwjLkHHpHw9UEzvQubteqhtPOrFu73X/tWTln+rdFNZYAsJrYH8lm+7A=
-  app: net-sales
-  on:
-    branch: master
-    repo: MitchK/net-sales
