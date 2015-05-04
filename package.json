@@ -22,8 +22,7 @@
   },
   "homepage": "https://github.com/MitchK/net-sales",
   "dependencies": {
-    "gulp": "^3.8.11",
-    "express": "^4.12.3",
+    "gulp": "^3.8.11",demo
     "main-bower-files": "^2.6.2",
     "bower": "^1.4.1"
   },
